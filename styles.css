@@ -2,13 +2,27 @@
     --menu-bar-width: 60px;
     --menu-bar-height: 10px;
 }
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #menu {
     background-color: #D84282;
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
 }
 
 #menu::before,
@@ -23,11 +37,28 @@
 
 #menu::before {
     left: 0;
-    top: -20px;
+    bottom: 20px;
 }
 
 #menu::after {
     left: 0;
     top: 20px;
+}
+
+.container:hover #menu {
+    background-color: transparent;
+    transition: .3s ease-in-out;
+}
+
+.container:hover #menu::before {
+    transform: rotate(45deg);
+    bottom: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.container:hover #menu::after {
+    transform: rotate(-45deg);
+    top: 0;
+    transition: 0.4s ease-in-out;
 }
 
